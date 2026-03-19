@@ -522,7 +522,7 @@ function hasHeader(romFile){
 
 
 function updateChecksums(file, startOffset, force){
-	if(file===romFile && file.fileSize>33554432 && !force){
+	if(file===romFile && file.fileSize>545259520 && !force){
 		el('crc32').innerHTML='File is too big. <span onclick=\"updateChecksums(romFile,'+startOffset+',true)\">Force calculate checksum</span>';
 		el('md5').innerHTML='';
 		el('sha1').innerHTML='';
