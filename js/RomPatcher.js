@@ -1,6 +1,6 @@
 /* Rom Patcher JS v20230406 - Marc Robledo 2016-2023 - http://www.marcrobledo.com/license */
 
-const TOO_BIG_ROM_SIZE=67108863;
+const TOO_BIG_ROM_SIZE=545259520;
 const HEADERS_INFO=[
 	[/\.nes$/, 16, 1024], //interNES
 	[/\.fds$/, 16, 65500], //fwNES
