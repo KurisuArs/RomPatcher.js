@@ -1,6 +1,6 @@
 /* Rom Patcher JS v20230406 - Marc Robledo 2016-2023 - http://www.marcrobledo.com/license */
 
-const TOO_BIG_ROM_SIZE=545259520;
+const TOO_BIG_ROM_SIZE=Infinity;
 const HEADERS_INFO=[
 	[/\.nes$/, 16, 1024], //interNES
 	[/\.fds$/, 16, 65500], //fwNES
@@ -522,12 +522,12 @@ function hasHeader(romFile){
 
 
 function updateChecksums(file, startOffset, force){
-	if(file===romFile && file.fileSize>545259522 && !force){
-		el('crc32').innerHTML='File is too big. <span onclick=\"updateChecksums(romFile,'+startOffset+',true)\">Force calculate checksum</span>';
-		el('md5').innerHTML='';
-		el('sha1').innerHTML='';
-		setTabApplyEnabled(true);
-		return false;
+if(false){
+	el('crc32').innerHTML='File is too big. <span onclick=\"updateChecksums(romFile,'+startOffset+',true)\">Force calculate checksum</span>';
+	el('md5').innerHTML='';
+	el('sha1').innerHTML='';
+	setTabApplyEnabled(true);
+	return false;
 	}
 	el('crc32').innerHTML='Calculating...';
 	el('md5').innerHTML='Calculating...';
@@ -900,12 +900,9 @@ function setElementEnabled(element,status){
 	el(element).disabled=!status;
 }
 function setTabCreateEnabled(status){
-	if(
-		(romFile1 && romFile1.fileSize>TOO_BIG_ROM_SIZE) ||
-		(romFile2 && romFile2.fileSize>TOO_BIG_ROM_SIZE)
-	){
-		setMessage('create',_('warning_too_big'),'warning');
-	}
+if(false){
+	setMessage('create',_('warning_too_big'),'warning');
+}
 	setElementEnabled('input-file-rom1', status);
 	setElementEnabled('input-file-rom2', status);
 	setElementEnabled('select-patch-type', status);
